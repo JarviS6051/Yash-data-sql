@@ -221,3 +221,20 @@ SELECT * FROM Recording_Staff;
 UPDATE City SET City_name = 'Allen' WHERE City_ID = 2000;
 
 DELETE FROM Hospital_Info_2 WHERE hosp_name = 'Charlton';
+
+SELECT bd_name, bd_age, bd_sex, bd_Bgroup 
+FROM Blood_Donor 
+WHERE City_ID = 1100;
+
+SELECT bd_Bgroup, COUNT(*) AS donor_count 
+FROM Blood_Donor 
+GROUP BY bd_Bgroup;
+
+SELECT reci_name, reci_age, reci_Brgp, reci_Bqnty 
+FROM Recipient 
+WHERE reci_Brgp = 'B+';
+
+SELECT hosp_name, hosp_needed_qnty 
+FROM Hospital_Info_2 
+WHERE hosp_needed_Bgrp = 'A+';
+
