@@ -1,4 +1,3 @@
--- Create BB_Manager table
 CREATE TABLE BB_Manager (
     M_id int NOT NULL,
     mName varchar(100) NOT NULL,
@@ -6,7 +5,6 @@ CREATE TABLE BB_Manager (
     CONSTRAINT Mid_pk PRIMARY KEY (M_id)
 );
 
--- Insert data into BB_Manager
 INSERT INTO BB_Manager VALUES
 (102, 'Jack', 4693959671),
 (103, 'Peter', 4693959601),
@@ -20,7 +18,6 @@ INSERT INTO BB_Manager VALUES
 
 SELECT * FROM BB_Manager;
 
--- Create Blood_Donor table
 CREATE TABLE Blood_Donor (
     bd_ID int NOT NULL,
     bd_name varchar(100) NOT NULL,
@@ -33,7 +30,6 @@ CREATE TABLE Blood_Donor (
     CONSTRAINT bdID_pk PRIMARY KEY (bd_ID)
 );
 
--- Insert data into Blood_Donor
 INSERT INTO Blood_Donor VALUES
 (150221, 'Mark', 25, 'M', 'B+', '2015-12-17', 101212, 1100),
 (160011, 'Abdul', 35, 'F', 'A+', '2016-11-22', 101212, 1100),
@@ -48,7 +44,6 @@ INSERT INTO Blood_Donor VALUES
 
 SELECT * FROM Blood_Donor;
 
--- Create BloodSpecimen table
 CREATE TABLE BloodSpecimen (
     specimen_number int NOT NULL,
     b_group varchar(10) NOT NULL,
@@ -58,7 +53,6 @@ CREATE TABLE BloodSpecimen (
     CONSTRAINT specimenumber_pk PRIMARY KEY (specimen_number)
 );
 
--- Insert data into BloodSpecimen
 INSERT INTO BloodSpecimen VALUES
 (1001, 'B+', 1, 11, 101),
 (1002, 'O+', 1, 12, 102),
@@ -77,7 +71,6 @@ INSERT INTO BloodSpecimen VALUES
 
 SELECT * FROM BloodSpecimen;
 
--- Create City table
 CREATE TABLE City (
     City_ID int NOT NULL,
     City_name varchar(100) NOT NULL,
@@ -98,7 +91,6 @@ INSERT INTO City VALUES
 
 SELECT * FROM City;
 
--- Create DiseaseFinder table
 CREATE TABLE DiseaseFinder (
     dfind_ID int NOT NULL,
     dfind_name varchar(100) NOT NULL,
@@ -106,7 +98,6 @@ CREATE TABLE DiseaseFinder (
     CONSTRAINT dfindID_pk PRIMARY KEY (dfind_ID)
 );
 
--- Insert data into DiseaseFinder
 INSERT INTO DiseaseFinder VALUES
 (11, 'Peter', 4693804223),
 (12, 'Park', 4693804223),
@@ -121,10 +112,6 @@ INSERT INTO DiseaseFinder VALUES
 
 SELECT * FROM DiseaseFinder;
 
--- Drop table if needed
--- DROP TABLE DiseaseFinder;
-
--- Create Hospital_Info_1 table
 CREATE TABLE Hospital_Info_1 (
     hosp_ID int NOT NULL,
     hosp_name varchar(100) NOT NULL,
@@ -133,7 +120,6 @@ CREATE TABLE Hospital_Info_1 (
     PRIMARY KEY(hosp_ID)
 );
 
--- Insert data into Hospital_Info_1
 INSERT INTO Hospital_Info_1 VALUES
 (1, 'MayoClinic', 1100, 101),
 (2, 'CleavelandClinic', 1200, 103),
@@ -148,7 +134,6 @@ INSERT INTO Hospital_Info_1 VALUES
 
 SELECT * FROM Hospital_Info_1;
 
--- Create Hospital_Info_2 table
 CREATE TABLE Hospital_Info_2 (
     hosp_ID int NOT NULL,
     hosp_name varchar(100) NOT NULL,
@@ -157,7 +142,6 @@ CREATE TABLE Hospital_Info_2 (
     PRIMARY KEY(hosp_ID, hosp_needed_Bgrp)
 );
 
--- Insert data into Hospital_Info_2
 INSERT INTO Hospital_Info_2 VALUES
 (1, 'MayoClinic', 'A+', 20),
 (1, 'MayoClinic', 'AB+', 0),
@@ -185,7 +169,6 @@ INSERT INTO Hospital_Info_2 VALUES
 
 SELECT * FROM Hospital_Info_2;
 
--- Create Recipient table
 CREATE TABLE Recipient (
     reci_ID int NOT NULL,
     reci_name varchar(100) NOT NULL,
@@ -200,7 +183,6 @@ CREATE TABLE Recipient (
     CONSTRAINT reciid_pk PRIMARY KEY (reci_ID)
 );
 
--- Insert data into Recipient
 INSERT INTO Recipient VALUES
 (10001, 'Mark', 25, 'B+', 1.5, 101212, 1100, 101, 'M', '2015-12-17'),
 (10002, 'Dan', 60, 'A+', 1, 101312, 1100, 102, 'M', '2015-12-16'),
@@ -215,10 +197,6 @@ INSERT INTO Recipient VALUES
 
 SELECT * FROM Recipient;
 
--- Drop table if needed
--- DROP TABLE Recipient;
-
--- Create Recording_Staff table
 CREATE TABLE Recording_Staff (
     reco_ID int NOT NULL,
     reco_Name varchar(100) NOT NULL,
@@ -226,7 +204,6 @@ CREATE TABLE Recording_Staff (
     CONSTRAINT recoID_pk PRIMARY KEY (reco_ID)
 );
 
--- Insert data into Recording_Staff
 INSERT INTO Recording_Staff VALUES
 (101212, 'Walcot', 4045806553),
 (101312, 'Henry', 4045806553),
@@ -241,8 +218,6 @@ INSERT INTO Recording_Staff VALUES
 
 SELECT * FROM Recording_Staff;
 
--- Update City name
 UPDATE City SET City_name = 'Allen' WHERE City_ID = 2000;
 
--- Delete a hospital entry
 DELETE FROM Hospital_Info_2 WHERE hosp_name = 'Charlton';
